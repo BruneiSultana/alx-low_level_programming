@@ -9,14 +9,13 @@ int main(void)
 {
 	char lowercase = 'a';
 
-	if (lowercase <= 'z')
+	while (lowercase <= 'z')
 	{
 		putchar(lowercase);
 		lowercase++;
 	}
-	else
-	{
+
 		putchar('\n');
-	}
+
 	return (0);
 }
