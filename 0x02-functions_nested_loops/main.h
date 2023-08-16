@@ -40,4 +40,12 @@ int _islower(int c);
 
 int _isalpha(int c);
 
+/**
+ * print_sign - print signed of number, positive or negative or zero. 
+ * @n: the number to check
+ * Return: int
+ */
+
+int print_sign(int n);
+
 #endif
