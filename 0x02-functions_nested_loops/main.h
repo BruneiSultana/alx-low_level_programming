@@ -51,10 +51,16 @@ int print_sign(int n);
 /**
  * _abs - compute absolute value of an integer
  * 
- * Returm: int
+ * Return: int
  */
 
 int _abs(int);
 
+/**
+ * print_last_digit - prints the last digit of a number
+ *
+ * Return: int
+ */
 
+int print_last_digit(int);
 #endif
