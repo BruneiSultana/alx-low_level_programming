@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * prints lowercase alphabet on 10 different lines
- * Return:0
+ * print_alphabet_x10 - prints lowercase alphabet on 10 different lines
+ * Return : 0
  */
 
 void print_alphabet_x10(void)
@@ -13,13 +13,12 @@ void print_alphabet_x10(void)
 
 	while (count <= 10)
 	{
-		while(letter = 'z')
+		while (letter = 'z')
 		{
 			_putchar(letter);
 			letter++;
-		
 		}
-	
+
 		_putchar('\n');
 	}
 
