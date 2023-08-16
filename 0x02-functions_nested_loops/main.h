@@ -1,5 +1,5 @@
-#ifndef _main.h_
-#define _main.h_
+#ifndef _main_h_
+#define _main_h_
 
 /**
  * _putchar - writes the character c to stdout
@@ -17,3 +17,9 @@ int _putchar(char c);
  */
 
 void print_alphabet(void);
+
+/**
+ * print_alphabet_x10 - prints lowecase alphabet 10 times
+ */
+
+void print_alphabet_x10(void);
