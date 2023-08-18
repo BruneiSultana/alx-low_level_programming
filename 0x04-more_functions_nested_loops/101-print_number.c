@@ -1,36 +1,34 @@
 #include "main.h"
-
-
-void print_unsigned_int(unsigned int n);
 /**
- * print_number - print number n with putchar
- *
- * @n: number to print
- *
- * Return: always void
+ * print_number - print an integer, without using long, arrays, or pointers
+ * @n: number to be printed
  */
+
 void print_number(int n)
 {
-	if (n < 0)
-	{
-		_putchar('-');
-		print_unsigned_int(-(unsigned int)n);
-	}
+	unsigned int tens, digit, positive = n;
+	double t_beg = 1;
+
+	if (n == 0)
+		_putchar('0');
 	else
-		print_unsigned_int(n);
-}
-/**
- * print_unsigned_int - prints an unsigned integer
- *
- * @n: an unsigned integer to print
- *
- * Return: always void
- */
-void print_unsigned_int(unsigned int n)
-{
-	if (n / 10 != 0)
 	{
-		print_unsigned_int(n / 10);
+		if (n < 0)
+		{
+			positive = n * -1;
+			_putchar('-');
+		}
+
+		while (t_beg <= positive)
+			t_beg *= 10;
+		tens = t_beg / 10;
+
+		while (tens >= 1)
+		{
+			digit = positive / tens;
+			_putchar(digit + '0');
+			positive = (positive - (tens * digit));
+			tens /= 10;
+		}
 	}
-	_putchar((n % 10) + '0');
 }
