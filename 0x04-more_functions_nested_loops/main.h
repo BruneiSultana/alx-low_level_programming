@@ -11,6 +11,18 @@
 
 int _putchar(char c);
 
+
+/**
+ * _isupper - checks for uppercase character
+ *
+ * @c: input argument
+ * Return: 1 if the character is uppercase, 0 if lowercase
+ *
+ */
+
+int _isupper(int c);
+
+
 /**
  * _isdigit - checks for digits
  *
@@ -19,6 +31,6 @@ int _putchar(char c);
  *
  */
 
-int _isupper(int c);
+int _isdigit(int c);
 
 #endif
