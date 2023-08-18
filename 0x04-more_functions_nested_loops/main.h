@@ -44,4 +44,15 @@ int _isdigit(int c);
  */
 
 int mul(int a, int b);
+
+/**
+ * print_numbers - print digits from 0 to 9
+ *
+ * Return: always void
+ *
+ */
+
+void print_numbers(void);
+
+
 #endif
