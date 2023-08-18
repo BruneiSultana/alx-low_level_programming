@@ -12,10 +12,10 @@
 int _putchar(char c);
 
 /**
- * _isupper - checks for uppercase character
+ * _isdigit - checks for digits
  *
  * @c: input argument
- * Return: 1 if the character is uppercase, 0 if lowercase
+ * Return: 1 if it is a digit, 0 if not
  *
  */
 
