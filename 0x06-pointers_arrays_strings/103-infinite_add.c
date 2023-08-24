@@ -15,7 +15,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int tempSizeR = size_r;
 	int n1Length = 0, n2Length = 0, result = 0, carryStore = 0;
-
+	]
 	while (*(n1 + n1Length) != '\0')
 		n1Length++;
 	while (*(n2 + n2Length) != '\0')
@@ -27,15 +27,12 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	while (size_r >= 0)
 	{
 		if (size_r == tempSizeR)
-		{ /* set last byte to end of string char or 'null byte' */
+			/* set last byte to end of string char or 'null byte' */
 			r[size_r--] = '\0';
 			continue;
-		}
 		if (n1Length < 0 && n2Length < 0 && carryStore == 0)
-		{
 			r[size_r--] = FILL;
 			continue; /* fill in rest with constants's */
-		}
 		else if (n1Length < 0 && n2Length < 0 && carryStore != 0)
 			result = carryStore;
 		else if (n1Length < 0)
@@ -43,9 +40,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		else if (n2Length < 0)
 			result = n1[n1Length] + carryStore - '0';
 		else /* normal case */
-		{
 			result = (n1[n1Length] - '0') + (n2[n2Length] - '0') + carryStore;
-		}
 		carryStore = 0;
 		if (result > 9)
 		{

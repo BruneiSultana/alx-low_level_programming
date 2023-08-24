@@ -1,48 +1,34 @@
-#include "*main.h"
-#include <stdio.h>
+#include "main.h"
 
 /**
- * print_buffer - prints a buffer
+ * print_buffer - prints contents of a buffer
  *
- * @b: char pointer
+ * @b: buffer to print
+ * @size: size of buffer
  *
- * @size: int
- *
- * Return: void
+ * Return: always void
  */
+
 
 void print_buffer(char *b, int size)
 {
+	int quo, rem, i = 0;
+	int bitCounter = 0, numBitsInLine;
 
-	int i, j;
-
-	i = 0;
-
-	while (i < size)
+	if (size == 0)
+		return;
+	quo = size / 10;
+	rem = size % 10;
+	if (rem)
+		quo++;
+	while (i < quo) /* loop through 10 bits at a time */
 	{
-		printf("%08x: ", i);
-		for (j = i; j < i + 10; j++)
-		{
-			if (j < size)
-				printf("%02x", (unsigned char)b[j]);
-			else
-				printf("  ");
-			if (j % 2)
-				putchar(' ');
-		}
-		for (j = i; j < i + 10; j++)
-		{
-			if (j >= size)
-				break;
-
-			if (b[j] >= ' ' && *(b + j) <= '~')
-				putchar(*(b + j));
-			else
-				putchar('.');
-		}
-		i += 10;
-		if (i < size)
-			putchar('\n');
+		numBitsInLine = (size - rem) > bitCounter ? 10 : rem;
+		printf("%.8x: ", bitCounter);
+		print_hex_line(b, numBitsInLine, bitCounter);
+		print_buffer_line(b, numBitsInLine, bitCounter);
+		putchar('\n');
+		bitCounter += 10;
+		i++;
 	}
-	putchar('\n');
 }
