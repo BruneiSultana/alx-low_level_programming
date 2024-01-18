@@ -1,27 +1,24 @@
 #include "main.h"
 
 /**
+ * main - dereferencing pointers, example with int and char types
  *
- * _puts_recursion: prints a string, followed by a new line.
+ * _puts_recursion - recursively prints a string, followed by a new line
  *
- * @dest: arg blue
- *
- * @src: arg *s
- *
- * Return: always 0
+ * Return: always 0.
  *
  */
 
 int main(void)
 {
-       void _puts_recursion(char *s)
-       {
-	      if ((*s > z || *s < z) || (*s > Z || *s < A)) 
-	      {
-		      return;
-	      }
-	      printf("%c", *s);
-	      *s --;
+	void _puts_recursion(char *s)
+	{
+		if (*s == '\0')
+		{
+			putchar('\n');
+		}
+	      putchar(*s);
+	      *s++;
 	      _puts_recursion(*s);
-       }
+	}
 }
