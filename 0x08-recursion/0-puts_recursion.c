@@ -15,10 +15,9 @@ int main(void)
 	{
 		if (*s == '\0')
 		{
-			putchar('\n');
+			printf('\n');
 		}
-	      putchar(*s);
-	      *s++;
+	      printf("%c", *s);
 	      _puts_recursion(*s);
 	}
 }
